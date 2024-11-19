@@ -1,0 +1,7 @@
+{
+  "name": "Automoviles_Inc",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
