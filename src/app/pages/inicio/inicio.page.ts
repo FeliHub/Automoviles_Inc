@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 //import { ApiService } from '../api.service';
 //import { HttpClient } from '@angular/common/http';
 
@@ -12,7 +14,10 @@ export class InicioPage implements OnInit{
 
 //cars: any[] = [];
 
-  constructor(/*private apiService: ApiService*/) {}
+constructor(private authService:AuthService,
+            private router:Router,
+            private aService:AuthService,
+            /*private apiService: ApiService*/) {}
 
   ngOnInit() {
     /*
@@ -28,10 +33,13 @@ export class InicioPage implements OnInit{
     */
   }
 
-
-  /*
   swiperSlideChanged(e: any) {
     console.log('changed: ', e)
   }
-  */
+
+  logout(){
+    this.aService.logout();
+    alert("Sesión ha sido cerrada")
+    this.router.navigate(['/home']);
+  }
 }

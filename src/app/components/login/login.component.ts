@@ -39,9 +39,4 @@ export class LoginComponent  implements OnInit {
     }
   }//fin de Register
 
-  logout(){
-    this.aService.logout();
-    alert("Sesión ha sido cerrada")
-    this.router.navigate(['/home']);
-  }
 }

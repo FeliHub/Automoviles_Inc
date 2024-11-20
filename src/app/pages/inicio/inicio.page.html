@@ -1,13 +1,65 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>inicio</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">inicio</ion-title>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar class="new-background-color2">
+      <ion-title><h3><b>Menu</b></h3></ion-title>
     </ion-toolbar>
   </ion-header>
+  <ion-content class="ion-padding">
+    
+    <ion-button class="regiscol2" shape="round" routerLink="/registrar">Registrar Autos</ion-button>
+
+    <!-- buscar como hacer hide y disable en ionic, para esconder botones y que no se usen-->
+  
+  </ion-content>
+</ion-menu>
+
+<div class="ion-page" id="main-content">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar class="new-background-color">
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="logout()">Logout</ion-button>
+      </ion-buttons>
+
+      <ion-title><h3><b>Automoviles Inc.</b></h3></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content padding class="bgcol" [fullscreen]="true" class="root">
+
+  <h2><b>✨ Autos destacados de hoy ✨</b></h2>
+  <swiper-container pager="true"
+    (slidechange)="swiperSlideChanged($event)"
+    [loop]="true"
+    [pagination]="true">
+    
+    <swiper-slide><ion-img src="assets/img/rojo.jpg"></ion-img></swiper-slide>
+
+    <swiper-slide><ion-img src="assets/img/RT_V_05a99b23df054e0eb2c93b3885eaa13e.jpg"></ion-img></swiper-slide>
+
+    <swiper-slide><ion-img class="autoimg" src="assets/img/white.jpg"></ion-img></swiper-slide>
+
+  </swiper-container>
+
+  <!--
+  <ion-card *ngFor="let car of cars">
+    <img [src]="car.image" alt="Car image" />
+    <ion-card-header>
+      <ion-card-title>{{ car.make }} {{ car.model }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><strong>Year:</strong> {{ car.year }}</p>
+      <p><strong>Price:</strong> ${{ car.price }}</p>
+    </ion-card-content>
+  </ion-card>
+  -->
+
+  <ion-button class="regiscol2" shape="round" routerLink="/registrar">Registrar Autos</ion-button>
+
+  <ion-button class="regiscol2" shape="round" expand="full" (click)="logout()">Logout</ion-button>
+  
 </ion-content>

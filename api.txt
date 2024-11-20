@@ -1,0 +1,43 @@
+API OPCIONAL
+
+const http = require('https');
+
+const options = {
+	method: 'GET',
+	hostname: 'car-data.p.rapidapi.com',
+	port: null,
+	path: '/cars?limit=10&page=0',
+	headers: {
+		'x-rapidapi-key': 'Sign Up for Key',
+		'x-rapidapi-host': 'car-data.p.rapidapi.com'
+	}
+};
+
+const req = http.request(options, function (res) {
+	const chunks = [];
+
+	res.on('data', function (chunk) {
+		chunks.push(chunk);
+	});
+
+	res.on('end', function () {
+		const body = Buffer.concat(chunks);
+		console.log(body.toString());
+	});
+});
+
+req.end();
+
+
+
+
+
+https://rapidapi.com/principalapis/api/car-data/playground/apiendpoint_110d9e56-8199-4939-973a-57703ebb7f28
+
+
+
+Vistas de Usuarios (hacer):
+
+- Tienda de vehiculos
+- Formulario de compra ()
+- Contacto al vendedor ()

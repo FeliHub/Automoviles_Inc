@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 
 import { InicioPage } from './inicio.page';
 import { InicioPageRoutingModule } from './inicio-routing.module';
-//import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { InicioPageRoutingModule } from './inicio-routing.module';
     InicioPageRoutingModule
   ],
   declarations: [InicioPage],
-  //schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InicioPageModule {}
