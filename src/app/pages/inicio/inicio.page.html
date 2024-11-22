@@ -1,19 +1,20 @@
+<!-- MENÚ -->
 <ion-menu contentId="main-content">
   <ion-header>
     <ion-toolbar class="new-background-color2">
       <ion-title><h3><b>Menu</b></h3></ion-title>
     </ion-toolbar>
   </ion-header>
+
   <ion-content class="ion-padding">
     
-    <ion-button class="regiscol2" shape="round" routerLink="????">Registrar Autos</ion-button>
-    <ion-button class="regiscol2" shape="round" routerLink="/tienda">Tienda</ion-button>
-
+    <ion-button class="regiscol2" shape="round" routerLink="/tienda">Ir a Tienda</ion-button>
     <!-- buscar como hacer hide y disable en ionic, para esconder botones y que no se usen-->
-  
+
   </ion-content>
 </ion-menu>
 
+<!-- HEADER -->
 <div class="ion-page" id="main-content">
 
   <ion-header [translucent]="true">
@@ -30,6 +31,7 @@
     </ion-toolbar>
   </ion-header>
 
+<!-- CONTENIDO -->
 <ion-content padding class="bgcol" [fullscreen]="true" class="root">
 
   <h2><b>✨ Autos destacados de hoy ✨</b></h2>
@@ -45,18 +47,6 @@
     <swiper-slide><ion-img class="autoimg" src="assets/img/white.jpg"></ion-img></swiper-slide>
 
   </swiper-container>
-
-  <!--
-  <ion-card *ngFor="let car of cars">
-    <img [src]="car.image" alt="Car image" />
-    <ion-card-header>
-      <ion-card-title>{{ car.make }} {{ car.model }}</ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p><strong>Year:</strong> {{ car.year }}</p>
-      <p><strong>Price:</strong> ${{ car.price }}</p>
-    </ion-card-content>
-  </ion-card>
-  -->
   
 </ion-content>
+<!-- FIN -->

@@ -24,9 +24,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
             AngularFireAuthModule,
             AngularFirestoreModule,
             FormsModule,
-            HttpClientModule
-           ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+            HttpClientModule],
+  providers: [{provide: RouteReuseStrategy,
+               useClass: IonicRouteStrategy}],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
