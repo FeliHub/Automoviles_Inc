@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
-
+import { RegistroUserPage } from './registro-user.page';
 import { RegistroUserPageRoutingModule } from './registro-user-routing.module';
 
-import { RegistroUserPage } from './registro-user.page';
+import { RegisterComponent } from 'src/app/components/register/register.component';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { RegistroUserPage } from './registro-user.page';
     IonicModule,
     RegistroUserPageRoutingModule
   ],
-  declarations: [RegistroUserPage]
+  declarations: [RegistroUserPage, RegisterComponent]
 })
 export class RegistroUserPageModule {}

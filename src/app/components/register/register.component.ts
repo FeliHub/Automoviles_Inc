@@ -7,15 +7,17 @@ import { Router } from '@angular/router';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
 })
+
 export class RegisterComponent  implements OnInit {
+  email:string = "";
+  password:string = "";
   
-  constructor(/*private authService:AuthService,
+  constructor(private authService:AuthService,
               private router:Router,
-              private aService:AuthService*/) {}
+              private aService:AuthService) {}
 
   ngOnInit() {}
-
-  /*
+  
   async register(){
     try{
       await this.authService.register(this.email, this.password);
@@ -25,5 +27,5 @@ export class RegisterComponent  implements OnInit {
       alert("Ha ocurrido un problema con el registro:  " +error);
     }
   }//fin de Register
-  */
+  
 }
