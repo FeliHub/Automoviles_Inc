@@ -29,14 +29,4 @@ export class LoginComponent  implements OnInit {
     }
   }//fin de Login
 
-  async register(){
-    try{
-      await this.authService.register(this.email, this.password);
-      alert("Usuario registrado exitosamente");
-
-    }catch(error){
-      alert("Ha ocurrido un problema con el registro:  " +error);
-    }
-  }//fin de Register
-
 }

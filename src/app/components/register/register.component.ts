@@ -22,6 +22,7 @@ export class RegisterComponent  implements OnInit {
     try{
       await this.authService.register(this.email, this.password);
       alert("Usuario registrado exitosamente");
+      this.router.navigate(['/home']);
 
     }catch(error){
       alert("Ha ocurrido un problema con el registro:  " +error);
