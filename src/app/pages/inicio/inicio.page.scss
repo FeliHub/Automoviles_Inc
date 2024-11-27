@@ -1,5 +1,5 @@
 .new-background-color{
-    --background: #4168bb;
+    --background: rgb(65, 103, 186);
     }
 
 .new-background-color2{
@@ -7,7 +7,7 @@
     }
 
 .regiscol2{
-    --background: #295dc7;
+    --background: rgb(65, 103, 186);
     --color: white;
     }
 
@@ -78,5 +78,5 @@ ion-menu::part(backdrop) {
 ion-menu::part(container) {
     border-radius: 0 20px 20px 0;
       
-    box-shadow: 4px 0px 16px rgba(0, 27, 146, 0.719);
+    box-shadow: 4px 0px 16px rgba(0, 0, 0, 0.719);
     }

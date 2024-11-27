@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-//import { ApiService } from '../api.service';
-//import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-inicio',
@@ -14,10 +12,8 @@ export class InicioPage implements OnInit{
 
 //cars: any[] = [];
 
-constructor(private authService:AuthService,
-            private router:Router,
-            private aService:AuthService,
-            /*private apiService: ApiService*/) {}
+constructor(private router:Router,
+            private aService:AuthService) {}
 
   ngOnInit() {
     /*
