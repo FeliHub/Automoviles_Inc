@@ -8,11 +8,23 @@
 
   <ion-content class="ion-padding">
     
-    <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/inicio">Inicio</ion-button>
-    <hr>
-    <ion-button fill="clear" expand="full" routerLink="/tienda">Tienda</ion-button>
-    <hr>
-    <!--<ion-button fill="clear" expand="full" routerLink="/servicio">Tienda</ion-button>-->
+    <ion-item>
+      <ion-label>
+        <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/inicio">Inicio</ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-button fill="clear" expand="full" routerLink="/tienda">Tienda</ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <!--<ion-button fill="clear" expand="full" routerLink="/servicio">Tienda</ion-button>-->
+      </ion-label>
+    </ion-item>
 
   </ion-content>
 </ion-menu>

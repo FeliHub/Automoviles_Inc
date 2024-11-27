@@ -8,11 +8,23 @@
 
   <ion-content class="ion-padding">
     
-    <ion-button fill="clear" expand="full" routerLink="/inicio">Inicio</ion-button>
-    <hr>
-    <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/tienda">Tienda</ion-button>
-    <hr>
-    <!--<ion-button fill="clear" expand="full" routerLink="/servicio">Tienda</ion-button>-->
+    <ion-item>
+      <ion-label>
+        <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/inicio">Inicio</ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-button fill="clear" expand="full" routerLink="/tienda">Tienda</ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-label>
+        <!--<ion-button fill="clear" expand="full" routerLink="/servicio">Tienda</ion-button>-->
+      </ion-label>
+    </ion-item>
 
   </ion-content>
 </ion-menu>
@@ -34,6 +46,24 @@
     </ion-toolbar>
   </ion-header>
 
+<!-- CONTENIDO -->
 <ion-content>
-  
+  <ion-grid>
+    <ion-row>
+      <ion-col size-lg size="6" size-md size="12">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>3333333<!--{{ vehicle.brandName }}--></ion-card-title>
+          </ion-card-header>
+
+          <ion-card-content>
+
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+    
 </ion-content></div>
+<!-- FIN -->
