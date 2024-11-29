@@ -10,23 +10,28 @@ import { Router } from '@angular/router';
 })
 
 export class TiendaPage implements OnInit {
-  vehicles: any[] = [];
-
+  carData: any = null;
+  errorMessage: string = '';
+  
   constructor(private apiService: ApiService,
               private router:Router,
-              private aService:AuthService
-  ) {}
-
+              private aService:AuthService) {}
+  
   ngOnInit() {
-    this.apiService.getVehicles().subscribe({
-      next: (data) => {
-        console.log(data); // Para verificar la respuesta
-        this.vehicles = data?.data?.cars || []; // Accede al array de vehículos
+    this.getCarData();
+  }
+  
+  getCarData() {
+    this.apiService.getCarData().subscribe(
+      (data) => {
+        this.carData = data;
+        console.log(this.carData);  // Muestra los datos en la consola
       },
-      error: (err) => {
-        console.error('Error fetching vehicles:', err);
+      (error) => {
+        this.errorMessage = 'Error al obtener los datos del vehículo.';
+        console.error(error);
       }
-    });
+    );
   }
 
   buy(vehicle: any) {
