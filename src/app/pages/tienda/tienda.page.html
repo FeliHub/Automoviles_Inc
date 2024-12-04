@@ -8,11 +8,29 @@
 
   <ion-content class="ion-padding">
     
-    <ion-button fill="clear" expand="full" routerLink="/inicio">Inicio</ion-button>
-    <hr>
-    <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/tienda">Tienda</ion-button>
-    <hr>
-    <!--<ion-button fill="clear" expand="full" routerLink="/servicio">Tienda</ion-button>-->
+    <ion-item>
+      <ion-label>
+        <ion-button fill="clear" expand="full" routerLink="/inicio"><b>Inicio </b>
+          <ion-icon slot="end" name="home"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/tienda"><b>Tienda </b>
+          <ion-icon slot="end" name="pricetags"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label>
+        <ion-button fill="clear" expand="full" routerLink="/servicio"><b>Contacto </b>
+          <ion-icon slot="end" name="call"></ion-icon>
+        </ion-button>
+      </ion-label>
+    </ion-item>
 
   </ion-content>
 </ion-menu>
@@ -36,47 +54,18 @@
 
 <!-- CONTENIDO -->
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col size="12" size-md="6">
-        <!--
-        <ion-card>
-          <img [src]="vehicle.imageUrl" alt="{{ vehicle.carModelName }}" />
-          <ion-card-header>
-            <ion-card-title>{{ vehicle.brandName }} {{ vehicle.carModelName }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <p>Precio: {{ vehicle.exShowroomPrice }}</p>
-            <ion-button expand="full" color="primary" (click)="buy(vehicle)">
-              Comprar
-            </ion-button>
-          </ion-card-content>
-        </ion-card>
-        -->
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{ carData.make }} {{ carData.model }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <ion-img class="autoimg" src="assets/img/gmc.png"></ion-img>
-            <p>Año: {{ carData.year }}</p>
-            <ion-button expand="full" color="primary" routerLink="/formulario">Comprar</ion-button>
-          </ion-card-content>
-        </ion-card>
-
-        <ion-card *ngIf="errorMessage">
-          <ion-card-header>
-            <ion-card-title>Error</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            {{ errorMessage }}
-          </ion-card-content>
-        </ion-card>
-
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
+  <ion-card *ngFor="let car of cars">
+    <img [src]="car.imageUrl" alt="{{ car.make }} {{ car.model }}">
+    <ion-card-header>
+      <ion-card-title>{{ car.make }} {{ car.model }}</ion-card-title>
+      <ion-card-subtitle>{{ car.year }}</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Precio: ${{ car.price }}</p>
+      <ion-button (click)="viewCarDetails(car)" expand="full">Ver Detalles</ion-button>
+      <ion-button (click)="buyCar(car)" expand="full">Comprar</ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content></div>
 
 <!-- FIN -->

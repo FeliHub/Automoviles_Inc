@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
+import { NavController } from '@ionic/angular';
+import { Car } from './tienda.model';
 
 @Component({
   selector: 'app-tienda',
@@ -10,33 +11,49 @@ import { Router } from '@angular/router';
 })
 
 export class TiendaPage implements OnInit {
-  carData: any = null;
-  errorMessage: string = '';
+  cars: Car[] = [
+    {
+      id: 1,
+      make: 'Toyota',
+      model: 'Corolla',
+      year: 2020,
+      price: 20000,
+      imageUrl: 'https://example.com/toyota-corolla.jpg'
+    },
+    {
+      id: 2,
+      make: 'Ford',
+      model: 'Focus',
+      year: 2019,
+      price: 18000,
+      imageUrl: 'https://example.com/ford-focus.jpg'
+    },
+    {
+      id: 3,
+      make: 'Chevrolet',
+      model: 'Malibu',
+      year: 2021,
+      price: 25000,
+      imageUrl: 'https://example.com/chevrolet-malibu.jpg'
+    }
+  ];
   
-  constructor(private apiService: ApiService,
-              private router:Router,
-              private aService:AuthService) {}
+  constructor(private router:Router,
+              private aService:AuthService,
+              private navController: NavController) {}
   
-  ngOnInit() {
-    this.getCarData();
-  }
-  
-  getCarData() {
-    this.apiService.getCarData().subscribe(
-      (data) => {
-        this.carData = data;
-        console.log(this.carData);  // Muestra los datos en la consola
-      },
-      (error) => {
-        this.errorMessage = 'Error al obtener los datos del vehículo.';
-        console.error(error);
-      }
-    );
-  }
+  ngOnInit() {}
 
-  buy(vehicle: any) {
-    console.log('Purchased:', vehicle);
-    // Lógica adicional para manejar la compra
+  viewCarDetails(car: Car) {
+    this.navController.navigateForward('/car-detail', {
+      state: {
+        car: car
+      }
+    });
+  }
+  
+  buyCar(car: Car) {
+    alert(`Gracias por comprar un ${car.make} ${car.model} del ${car.year}!`);
   }
 
   logout(){

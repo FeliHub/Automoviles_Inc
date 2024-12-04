@@ -10,7 +10,7 @@
     
     <ion-item>
       <ion-label>
-        <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/inicio"><b>Inicio </b>
+        <ion-button fill="clear" expand="full" routerLink="/inicio"><b>Inicio </b>
           <ion-icon slot="end" name="home"></ion-icon>
         </ion-button>
       </ion-label>
@@ -26,7 +26,7 @@
     
     <ion-item>
       <ion-label>
-        <ion-button fill="clear" expand="full" routerLink="/servicio"><b>Contacto </b>
+        <ion-button [disabled]="true" fill="clear" expand="full" routerLink="/servicio"><b>Contacto </b>
           <ion-icon slot="end" name="call"></ion-icon>
         </ion-button>
       </ion-label>
@@ -52,22 +52,16 @@
     </ion-toolbar>
   </ion-header>
 
-<!-- CONTENIDO -->
-<ion-content padding class="bgcol" [fullscreen]="true" class="root">
-
-  <h2><b>✨ Autos destacados de hoy ✨</b></h2>
-  <swiper-container pager="true"
-    (slidechange)="swiperSlideChanged($event)"
-    [loop]="true"
-    [pagination]="true">
-    
-    <swiper-slide><ion-img src="assets/img/rojo.jpg"></ion-img></swiper-slide>
-
-    <swiper-slide><ion-img src="assets/img/RT_V_05a99b23df054e0eb2c93b3885eaa13e.jpg"></ion-img></swiper-slide>
-
-    <swiper-slide><ion-img class="autoimg" src="assets/img/white.jpg"></ion-img></swiper-slide>
-
-  </swiper-container>
-  
-</ion-content></div>
-<!-- FIN -->
+  <ion-content>
+    <ion-card *ngIf="car">
+      <img [src]="car.imageUrl" alt="{{ car.make }} {{ car.model }}">
+      <ion-card-header>
+        <ion-card-title>{{ car.make }} {{ car.model }}</ion-card-title>
+        <ion-card-subtitle>{{ car.year }}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>Precio: ${{ car.price }}</p>
+        <p>Detalles del auto...</p> <!-- Aquí puedes agregar más información -->
+      </ion-card-content>
+    </ion-card>
+  </ion-content>

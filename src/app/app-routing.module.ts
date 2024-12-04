@@ -31,8 +31,11 @@ const routes: Routes = [
     loadChildren: () => import('./pages/formulario/formulario.module').then( m => m.FormularioPageModule),
     canActivate: [authGuard]
   },
-
-
+  {
+    path: 'servicio',
+    loadChildren: () => import('./pages/servicio/servicio.module').then( m => m.ServicioPageModule),
+    canActivate: [authGuard]
+  },
 ];
 
 @NgModule({

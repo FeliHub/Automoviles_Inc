@@ -15,4 +15,5 @@ import { TiendaPageRoutingModule } from './tienda-routing.module';
   ],
   declarations: [TiendaPage]
 })
+
 export class TiendaPageModule {}
